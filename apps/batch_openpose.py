@@ -17,6 +17,6 @@ out_json_path = args.out_path
 
 os.makedirs(out_json_path, exist_ok=True)
 
-cmd = "cd {0}; ./build/examples/openpose/openpose.bin --image_dir {1} --write_json {2} --render_pose 2 --face --face_render 2 --hand --hand_render 2  --display 0 --write_images".format(op_dir, input_path, out_json_path)
+cmd = "cd {0}; ./build/examples/openpose/openpose.bin --image_dir {1} --display 0 --write_json {2} --render_pose 2 --face --face_render 2 --hand --hand_render 2".format(op_dir, input_path, out_json_path)
 print(cmd)
 os.system(cmd)
