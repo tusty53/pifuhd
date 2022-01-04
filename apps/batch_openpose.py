@@ -14,7 +14,8 @@ args = parser.parse_args()
 
 op_dir = args.openpose_dir
 input_path = args.input_root
-out_json_path = args.out_path
+out_path_json = args.out_path_json
+out_path_image = args.out_path_image
 
 os.makedirs(out_json_path, exist_ok=True)
 
