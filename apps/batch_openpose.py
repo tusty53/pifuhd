@@ -8,7 +8,8 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--openpose_dir', type=str, required=True)
 parser.add_argument('-i', '--input_root', type=str, required=True)
-parser.add_argument('-o', '--out_path', type=str, required=True)
+parser.add_argument('-o_j', '--out_path_json', type=str, required=True)
+parser.add_argument('-o_i', '--out_path_image', type=str, required=True)
 args = parser.parse_args()
 
 op_dir = args.openpose_dir
@@ -17,6 +18,6 @@ out_json_path = args.out_path
 
 os.makedirs(out_json_path, exist_ok=True)
 
-cmd = "cd {0}; ./build/examples/openpose/openpose.bin --image_dir {1} --display 0 --write_json {2} --render_pose 2 --face --face_render 2 --hand --hand_render 2".format(op_dir, input_path, out_json_path)
+cmd = "cd {0}; ./build/examples/openpose/openpose.bin --image_dir {1} --write_json {2} --render_pose 2 --face --face_render 2 --hand --hand_render 2  --display 0 --write_images {3}".format(op_dir, input_path, out_path_json, out_path_image)
 print(cmd)
 os.system(cmd)
